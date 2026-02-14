@@ -1,17 +1,21 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
+<BaseLayout title="Henry" description="Minimal personal site">
+  <h1>Henry</h1>
+  <p class="muted">Computer Science • Exeter • systems + tooling</p>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <div class="nav">
+    <a href="/projects/">Projects</a>
+    <a href="https://github.com/HenryGG-S" rel="me">GitHub</a>
+    <a href="mailto:you@example.com">Email</a>
+    <!-- optional: <a href="/cv.pdf">CV</a> -->
+  </div>
+
+  <section class="card">
+    <p>
+      Minimal “digital business card” site. Short intro here — 2–3 sentences max.
+    </p>
+  </section>
+</BaseLayout>
+
