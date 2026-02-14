@@ -1,14 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getEntryBySlug } from "astro:content";
+import { getCollection, getEntryBySlug } from "astro:content";
 
 export async function getStaticPaths() {
-  const { getCollection } = await import("astro:content");
   const projects = (await getCollection("projects")).filter((p) => !p.data.draft);
-
-  return projects.map((p) => ({
-    params: { slug: p.slug },
-  }));
+  return projects.map((p) => ({ params: { slug: p.slug } }));
 }
 
 const { slug } = Astro.params;
@@ -19,8 +15,10 @@ if (!entry) throw new Error(`Missing project: ${slug}`);
 const { Content } = await entry.render();
 const { title, description, repo, demo, tags, date } = entry.data;
 ---
-<BaseLayout title={`${title} — Henry`} description={description}>
+
+<BaseLayout title={`${title} — Henry George Grantham-Smith`} description={description}>
   <a class="muted" href="/projects/">← Back</a>
+
   <h1 style="margin-top:10px;">{title}</h1>
   <p class="muted">{description}</p>
 

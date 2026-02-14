@@ -6,7 +6,8 @@ const projects = (await getCollection("projects"))
   .filter((p) => !p.data.draft)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
-<BaseLayout title="Projects — Henry" description="Selected projects">
+
+<BaseLayout title="Projects — Henry George Grantham-Smith" description="Selected projects">
   <h1>Projects</h1>
   <p class="muted">A few things I’ve built / am building.</p>
 
