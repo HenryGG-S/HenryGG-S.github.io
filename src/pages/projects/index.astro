@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const projects = (await getCollection("projects"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+<BaseLayout title="Projects — Henry" description="Selected projects">
+  <h1>Projects</h1>
+  <p class="muted">A few things I’ve built / am building.</p>
+
+  <div class="list">
+    {projects.map((p) => (
+      <article class="card">
+        <h2 style="margin:0 0 6px; font-size:1.1rem;">
+          <a href={`/projects/${p.slug}/`}>{p.data.title}</a>
+        </h2>
+        <p class="muted" style="margin:0 0 10px;">{p.data.description}</p>
+        <p style="margin:0;">
+          {p.data.tags.slice(0, 5).map((t) => <span class="muted">#{t} </span>)}
+        </p>
+      </article>
+    ))}
+  </div>
+</BaseLayout>
+
