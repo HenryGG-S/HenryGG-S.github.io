@@ -1,19 +1,21 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title="Henry" description="Minimal personal site">
-  <h1>Henry</h1>
+
+<BaseLayout
+  title="Henry George Grantham-Smith"
+  description="Minimal personal site"
+>
+  <h1>Henry George Grantham-Smith</h1>
   <p class="muted">Computer Science • Exeter • systems + tooling</p>
 
-  <div class="nav">
+  <nav class="nav" aria-label="Primary">
     <a href="/projects/">Projects</a>
     <a href="https://github.com/HenryGG-S" rel="me">GitHub</a>
-    <a href="mailto:you@example.com">Email</a>
-    <!-- optional: <a href="/cv.pdf">CV</a> -->
-  </div>
+  </nav>
 
   <section class="card">
-    <p>
+    <p style="margin:0;">
       Minimal “digital business card” site. Short intro here — 2–3 sentences max.
     </p>
   </section>

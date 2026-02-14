@@ -1,6 +1,10 @@
 ---
-const { title = "Henry", description = "Personal site" } = Astro.props;
+const {
+  title = "Henry George Grantham-Smith",
+  description = "Personal site",
+} = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,11 +14,12 @@ const { title = "Henry", description = "Personal site" } = Astro.props;
     <title>{title}</title>
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
+
   <body>
     <main class="wrap">
       <slot />
       <footer class="footer">
-        <span>© {new Date().getFullYear()} Henry</span>
+        <span>© {new Date().getFullYear()} Henry George Grantham-Smith</span>
       </footer>
     </main>
   </body>
