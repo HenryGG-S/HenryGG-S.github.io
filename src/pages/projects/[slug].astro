@@ -9,7 +9,6 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 const entry = await getEntryBySlug("projects", slug);
-
 if (!entry) throw new Error(`Missing project: ${slug}`);
 
 const { Content } = await entry.render();
@@ -19,7 +18,7 @@ const { title, description, repo, demo, tags, date } = entry.data;
 <BaseLayout title={`${title} — Henry George Grantham-Smith`} description={description}>
   <a class="muted" href="/projects/">← Back</a>
 
-  <h1 style="margin-top:10px;">{title}</h1>
+  <h1 style="margin-top: 10px">{title}</h1>
   <p class="muted">{description}</p>
 
   <div class="nav">
@@ -28,12 +27,13 @@ const { title, description, repo, demo, tags, date } = entry.data;
     <span class="muted">{date.toISOString().slice(0, 10)}</span>
   </div>
 
-  <div class="muted" style="margin-bottom:18px;">
-    {tags.map((t) => <span>#{t} </span>)}
+  <div class="muted" style="margin-bottom: 18px">
+    {tags.map((t) => (
+      <span>#{t} </span>
+    ))}
   </div>
 
   <article class="card">
     <Content />
   </article>
 </BaseLayout>
-
