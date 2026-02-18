@@ -4,9 +4,10 @@ import { getCollection } from "astro:content";
 const max = 3;
 
 const projects = (await getCollection("projects"))
-  .filter((p) => !p.data.draft)
+  .filter((p) => !p.data.draft && p.data.featured)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, max);
+  .slice(0, 3);
+
 ---
 
 <section class="stack">
