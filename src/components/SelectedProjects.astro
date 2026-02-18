@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+
+const max = 3;
+
+const projects = (await getCollection("projects"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, max);
+---
+
+<section class="stack">
+  <div class="sectionHead">
+    <h2>Selected projects</h2>
+    <a class="muted" href="/projects/">View all →</a>
+  </div>
+
+  <div class="list">
+    {projects.map((p) => (
+      <article class="card">
+        <h3 class="cardTitle">
+          <a href={`/projects/${p.slug}/`}>{p.data.title}</a>
+        </h3>
+
+        <p class="muted" style="margin: 0 0 10px">{p.data.description}</p>
+
+        <p class="meta" style="margin: 0">
+          <span class="muted">{p.data.date.toISOString().slice(0, 10)}</span>
+          {p.data.tags?.length ? <span class="dot">•</span> : null}
+          {p.data.tags?.slice(0, 3).map((t) => (
+            <span class="tag">#{t}</span>
+          ))}
+        </p>
+      </article>
+    ))}
+  </div>
+</section>
+

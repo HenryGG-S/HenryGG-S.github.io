@@ -1,15 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SelectedProjects from "../components/SelectedProjects.astro";
 ---
 
 <BaseLayout title="Henry George Grantham-Smith" description="Minimal personal site">
   <h1>Henry George Grantham-Smith</h1>
   <p class="muted">Computer Science • Exeter • systems + tooling</p>
 
-  <section class="card">
+  <section class="card" style="margin-top: 18px">
     <p style="margin: 0">
-      Minimal “digital business card” site. Short intro here — 2–3 sentences max.
+      Short intro here — 2–3 sentences max. What you like building, what you’re aiming at.
     </p>
   </section>
+
+  <SelectedProjects />
 </BaseLayout>
 

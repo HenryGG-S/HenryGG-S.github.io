@@ -136,3 +136,28 @@ a:focus-visible {
   background: var(--card);
 }
 
+.stack { margin-top: 28px; }
+
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 22px 0 12px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+}
+
+.cardTitle {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.meta { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.dot { opacity: 0.5; }
+.tag { opacity: 0.8; }
+
