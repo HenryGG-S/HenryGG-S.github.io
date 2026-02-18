@@ -1,0 +1,40 @@
+---
+const path = Astro.url.pathname;
+
+// Keep internal links with trailing slashes for consistency on Pages.
+const links = [
+  { href: "/", label: "Home", external: false },
+  { href: "/projects/", label: "Projects", external: false },
+  { href: "https://github.com/HenryGG-S", label: "GitHub", external: true },
+  { href: "https://www.linkedin.com/in/henry-grantham-smith/", label: "LinkedIn", external: true },
+];
+
+const isActive = (href) => {
+  if (!href.startsWith("/")) return false;
+  if (href === "/") return path === "/";
+  return path.startsWith(href);
+};
+---
+
+<header class="header">
+  <a class="skip" href="#content">Skip to content</a>
+
+  <div class="brand">
+    <a href="/" class="brandLink">Henry George Grantham-Smith</a>
+  </div>
+
+  <nav class="nav" aria-label="Primary">
+    {links.map((l) =>
+      l.external ? (
+        <a href={l.href} target="_blank" rel="me noopener noreferrer">
+          {l.label}
+        </a>
+      ) : (
+        <a href={l.href} class={isActive(l.href) ? "active" : undefined}>
+          {l.label}
+        </a>
+      )
+    )}
+  </nav>
+</header>
+

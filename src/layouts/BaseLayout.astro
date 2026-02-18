@@ -1,4 +1,6 @@
 ---
+import SiteNav from "../components/SiteNav.astro";
+
 const {
   title = "Henry George Grantham-Smith",
   description = "Personal site",
@@ -17,10 +19,15 @@ const {
 
   <body>
     <main class="wrap">
-      <slot />
+      <SiteNav />
+      <section id="content">
+        <slot />
+      </section>
+
       <footer class="footer">
         <span>© {new Date().getFullYear()} Henry George Grantham-Smith</span>
       </footer>
     </main>
   </body>
 </html>
+
