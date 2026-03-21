@@ -4,7 +4,8 @@ description: "My Masters Dissertation and study"
 date: 2026-02-14
 tags: ["Haskell", "Network Programming", "Performance Engineering", "Benchmarking", "Load Testing", "Concurrency", "Runtime Profiling"]
 repo: "https://github.com/HenryGG-S/MirrorFrame"
-draft: true
+draft: false
+featured: true
 ---
 
 Implemented a lean, standards-aware HTTP/1.1 web server in Haskell, as part of my Year 4 dissertation, with a focus on understanding tail latency (p95–p99.9) under open-loop load. 
