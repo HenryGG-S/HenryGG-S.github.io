@@ -1,0 +1,13 @@
+---
+title: "Haskell HTTP/1.1 Server (Tail Latency Study)"
+description: "My Masters Dissertation and study"
+date: 2026-02-14
+tags: ["Haskell", "Network Programming", "Performance Engineering", "Benchmarking", "Load Testing", "Concurrency", "Runtime Profiling"]
+repo: "https://github.com/HenryGG-S/MirrorFrame"
+draft: true
+---
+
+Implemented a lean, standards-aware HTTP/1.1 web server in Haskell, as part of my Year 4 dissertation, with a focus on understanding tail latency (p95–p99.9) under open-loop load. 
+The project is structured around building the server as a clean, minimal baseline and using controlled benchmarking to study how runtime behaviour (e.g., scheduling/GC) impacts worst-case response times—using Warp as a reference point for comparisons. 
+Built and run via Stack, with runtime statistics captured using GHC RTS flags to support performance investigation.
+
