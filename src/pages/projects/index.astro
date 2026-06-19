@@ -7,9 +7,15 @@ const projects = (await getCollection("projects"))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<BaseLayout title="Projects — Henry George Grantham-Smith" description="Selected projects">
+<BaseLayout
+  title="Projects — Henry Grantham-Smith"
+  description="Software engineering, embedded systems, backend, and performance projects by Henry Grantham-Smith."
+>
   <h1>Projects</h1>
-  <p class="muted">A few things I’ve built / am building.</p>
+  <p class="muted">
+    Selected work across embedded systems, application development, performance investigation,
+    and reliability-focused software practice.
+  </p>
 
   <div class="list">
     {projects.map((p) => (
@@ -18,9 +24,10 @@ const projects = (await getCollection("projects"))
           <a href={`/projects/${p.slug}/`}>{p.data.title}</a>
         </h2>
         <p class="muted" style="margin: 0 0 10px">{p.data.description}</p>
-        <p style="margin: 0">
+        <p class="meta" style="margin: 0">
+          <span class="muted">{p.data.date.toISOString().slice(0, 10)}</span>
           {p.data.tags.slice(0, 5).map((t) => (
-            <span class="muted">#{t} </span>
+            <span class="tag">#{t}</span>
           ))}
         </p>
       </article>

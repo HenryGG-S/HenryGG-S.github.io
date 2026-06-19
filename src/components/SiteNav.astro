@@ -1,10 +1,10 @@
 ---
 const path = Astro.url.pathname;
 
-// Keep internal links with trailing slashes for consistency on Pages.
 const links = [
   { href: "/", label: "Home", external: false },
   { href: "/projects/", label: "Projects", external: false },
+  { href: "mailto:henryg-s@outlook.com", label: "Email", external: true },
   { href: "https://github.com/HenryGG-S", label: "GitHub", external: true },
   { href: "https://www.linkedin.com/in/henry-grantham-smith/", label: "LinkedIn", external: true },
 ];
@@ -20,13 +20,13 @@ const isActive = (href) => {
   <a class="skip" href="#content">Skip to content</a>
 
   <div class="brand">
-    <a href="/" class="brandLink">Henry George Grantham-Smith</a>
+    <a href="/" class="brandLink">Henry Grantham-Smith</a>
   </div>
 
   <nav class="nav" aria-label="Primary">
     {links.map((l) =>
       l.external ? (
-        <a href={l.href} target="_blank" rel="me noopener noreferrer">
+        <a href={l.href} target={l.href.startsWith("mailto:") ? undefined : "_blank"} rel={l.href.startsWith("mailto:") ? undefined : "me noopener noreferrer"}>
           {l.label}
         </a>
       ) : (
@@ -37,4 +37,3 @@ const isActive = (href) => {
     )}
   </nav>
 </header>
-

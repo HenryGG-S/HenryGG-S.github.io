@@ -3,23 +3,89 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import SelectedProjects from "../components/SelectedProjects.astro";
 ---
 
-<BaseLayout title="Henry Grantham-Smith" description="Minimal personal site">
-  <h1>Henry Grantham-Smith</h1>
-  <p class="muted">Computer Science • Exeter • systems + tooling</p>
-
-  <section class="card" style="margin-top: 18px">
-    <p style="margin: 0">
-<p>MSci Computer Science student at the University of Exeter, interested in reliable software, backend systems, networking, and performance investigation.</p>
-
-<p>Current focus:</p>
-<p>- Haskell HTTP/1.1 server for tail-latency analysis</p>
-<p>- satcom / ground-segment toy system design in Rust</p>
-<p>- collaborative full-stack development in a university lab-delivery project</p>
-
-<p>I’m especially interested in aerospace, space systems, and software that needs to be correct, maintainable, and well-documented.</p>
+<BaseLayout
+  title="Henry Grantham-Smith — Software Engineer"
+  description="Portfolio of Henry Grantham-Smith, MBCS: software engineering, embedded systems, backend tooling, and systems reliability projects."
+>
+  <section class="hero">
+    <p class="eyebrow">MSci Computer Science • Software Engineering • MBCS</p>
+    <h1>Henry Grantham-Smith</h1>
+    <p class="lead">
+      Software engineer interested in reliable, maintainable systems: embedded software,
+      backend tooling, performance investigation, and space-adjacent engineering practice.
     </p>
+
+    <div class="actions" aria-label="Profile links">
+      <a class="button" href="/projects/">View projects</a>
+      <a class="button secondary" href="https://github.com/HenryGG-S" target="_blank" rel="me noopener noreferrer">GitHub</a>
+      <a class="button secondary" href="https://www.linkedin.com/in/henry-grantham-smith/" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
+    </div>
+  </section>
+
+  <section class="card stack" aria-labelledby="about-heading">
+    <h2 id="about-heading">About</h2>
+    <p>
+      I have completed my MSci Computer Science programme at the University of Exeter and am
+      building toward software engineering roles where correctness, documentation, and long-term
+      maintainability matter.
+    </p>
+    <p>
+      My work spans embedded C on STM32, backend and full-stack development, Haskell systems
+      programming, benchmarking, and practical reliability patterns such as telemetry, command
+      parsing, explicit mode management, and fault handling.
+    </p>
+    <p>
+      I am a Professional Member of BCS, The Chartered Institute for IT (MBCS).
+    </p>
+  </section>
+
+  <section class="stack" aria-labelledby="focus-heading">
+    <h2 id="focus-heading">Current focus</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Embedded and systems software</h3>
+        <p class="muted">
+          Practising disciplined embedded development through PocketSat, including telemetry,
+          command handling, mode control, sensor health checks, watchdog behaviour, and verification notes.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Maintainable application development</h3>
+        <p class="muted">
+          Interested in clear software structure, requirements interpretation, testing, Git-based collaboration,
+          and documentation that helps real teams maintain systems over time.
+        </p>
+      </article>
+      <article class="card">
+        <h3>Performance and reliability</h3>
+        <p class="muted">
+          Exploring how implementation choices affect latency, runtime behaviour, and dependable operation
+          under load or constrained conditions.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="stack" aria-labelledby="skills-heading">
+    <h2 id="skills-heading">Technical areas</h2>
+    <div class="chips" aria-label="Technical skills">
+      <span>Java</span>
+      <span>C / Embedded C</span>
+      <span>C++</span>
+      <span>Python</span>
+      <span>Haskell</span>
+      <span>Git</span>
+      <span>Linux</span>
+      <span>STM32Cube/HAL</span>
+      <span>PlatformIO</span>
+      <span>Django</span>
+      <span>React</span>
+      <span>SQL / SQLite</span>
+      <span>Unit and integration testing</span>
+      <span>Technical documentation</span>
+      <span>Telemetry and fault handling</span>
+    </div>
   </section>
 
   <SelectedProjects />
 </BaseLayout>
-
